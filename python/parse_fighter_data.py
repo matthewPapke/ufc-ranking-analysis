@@ -117,6 +117,6 @@ p.set_title("UFC Champion Win Rate by Weight Class")
 
 
 
-
+plt.fi
 
 
