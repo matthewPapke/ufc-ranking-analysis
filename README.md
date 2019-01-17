@@ -1,0 +1,1 @@
+This notebook presents a brief analysis of the UFC's divisions. Particularly, it attempts to determine which divisions are particularly strong or weak using fighter statistics.
