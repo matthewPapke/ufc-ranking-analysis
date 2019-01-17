@@ -50,6 +50,7 @@ def calculate_win_rate ( fighter ):
 # get ranked fighters in each division
 rankedFighters = []
 allFighters = []
+malformedFighterInfoCount = 0
 for fighter in fighters:
 	try:
 		fighterInfo = {
@@ -67,7 +68,7 @@ for fighter in fighters:
 			rankedFighters.append(fighterInfo)
 	# ~10 listings contain bogus data from fighters, i.e. first_name = 'TBD', last_name = None
 	except:
-		print('malformed data from source')
+		malformedFighterInfoCount += 1
 
 
 # convert to dataframe
@@ -93,7 +94,7 @@ p.set_title("UFC Fighter Win Rate by Weight Class")
 
 # ranked fighter analysis
 sea.catplot(x="weight_class", y="win_rate", data=dfRankedFighters, order=weightClassOrder)
-plt.title('UFC Fighter Win Rate by Weight Class')
+plt.title('UFC Ranked Fighter Win Rate by Weight Class')
 plt.show()
 
 
